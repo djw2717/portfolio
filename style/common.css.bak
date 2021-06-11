@@ -1,0 +1,91 @@
+ /*
+        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Noto Serif KR', serif;*/
+        section{display:block;}
+        html,body{width:100%;height:100%; margin:0 auto;font-family: 'Noto Serif KR', serif;}
+        header{position:fixed; background-color:rgba(0,0,0,0.5);width:100%; box-shadow:0px 1px 10px 0.2px #ccc;}
+        header{height:4rem; position:fixed; top:0; width:100%; z-index:100;}
+        header h2{display:inline-block; color:cornflowerblue;}
+        .logo{float:left; margin-left:3rem; height:100%;}
+        #home{ background-color:#006cc1;  clear:both; text-align: center; height:100%;}
+		#homeTitle{color:#fff; font-size:4em;}
+
+
+		.covervid-wrapper {position: relative; top: 0; left: 0;width: 100%;height: 100%;}
+		
+		#particles{width:100%; height:100%; z-index:}
+		#intro{position:absolute; top:45%; left:25%;}
+        
+        #about{background-color:#fff;}
+        #about div{display:inline-block;}
+        #about .profile{background:#fff; width:40%; float:left; padding:5% 5% 0% 5%;}
+        #about .imgDiv {text-align:center; display:inline-block;}
+        #about .imgDiv img{width:50%; }
+        #about .infDiv ul{list-style: none;}
+
+        #about .infDiv ul li i{width:30px; text-align: center;}
+        #about .infDiv .nameTitle{font-weight:bold; font-size:1.4em; padding:1em 0;}
+
+        #about .skill{background:#fff; width:40%; padding:5%;}
+        #about .skill ul{display:inline-block; list-style:none; word-break: keep-all;}
+        #about .skill ul li{margin:10px 0;}
+        #about .skillName{}
+        #about .skillValue{width:60%;}
+        
+        #about .skillValue li{
+            background: pink; 
+            width:0px;
+            transition-property:all; 
+            transition-duration:4s;
+            transition-timing-function:ease-in-out; }
+        
+        #about .skillValue li.bar_new_ani{width:500px; background:blue;}
+
+
+
+
+
+
+
+
+        #portfolio{background-color:#eee; text-align: center; border-top:1px solid #ccc;}
+        #portfolio .project{display:inline-block; margin-bottom:5rem; padding:20px 20px; max-width:1000px;}
+        #portfolio .project div{display:inline-block;}
+        #portfolio .project .imgDiv{width:50%; float:left;}
+        #portfolio .project .imgDiv img{width:100%; height:auto;}
+        #portfolio .project .content{width:50%; text-align: left;}
+        #portfolio .project .content>*{padding-left:1rem;}
+        #portfolio .project .skill{display:block;}
+        #portfolio .project .skill ul{padding:0;}
+        #portfolio .project .skill ul li{float:left; margin-right:20px; list-style:none; background-color:#d72d6c;border-radius: 20px; padding:0.3em; 0.8em; font-size:0.8em; font-weight:bold; color:#fff; cursor:default;}
+
+        #portfolio .project .skill ul li:hover{background-color:#fff;color:#d72d6c; }
+        
+
+        #contact{background-color:#fff; border-top:1px solid #ccc;}
+
+        .contactForm{margin-left: 50px; padding-top: 50px;}
+		.contactForm div{padding-bottom:20px;}
+        .fullpage{width:100%; min-height:100%;padding-top:4rem;}
+        
+        
+        /*menu*/
+        nav{display:inline-block; float:right; height:100%;}
+        nav ul{margin:0 auto;}
+        nav ul li{float:left; list-style:none; display:inline-block; padding:20px 50px /*30px 50px*/; cursor:pointer;}
+        nav ul li a{font-size:1.3em; font-weight:600; color:#fff; text-decoration: none;}
+        nav ul li a:hover{color:#006cc1;}
+
+
+
+/***레이어팝업***/
+
+#popup.active { display: block; } 
+#popup { display: none; position: fixed; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 100; } 
+#popup .popup-wrap { position: absolute; top: 25%; left: 25%; width:70%; left:15%;} 
+#popup .popup-wrap .popup-content { background-color: #fff; color: #0f0f0f; padding: 58px 40px 48px; border-radius: 3px; } #popup .popup-wrap.text-popup { padding-bottom: 60px; } 
+#popup .popup-wrap .popup-content .title { text-align: center; font-size: 24px; line-height: 24px; } 
+#popup .popup-wrap.text-popup .popup-content .info-text { margin-top: 30px; text-align: center; font-size: 16px; line-height: 27px; color: #acacac; } 
+#popup .popup-wrap .btn-close { position: absolute; top: -35px; right: 0; cursor: pointer; width:30px;height:30px;}
+
+/***레이어팝업***/

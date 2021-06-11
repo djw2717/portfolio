@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome My Portfolio:)</title>
+    <link rel="stylesheet" type="text/css" href="style/common.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet">
+    
+   <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+  />
+   <!--home글자타이핑-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@2.3.1/dist/core.js"></script>
+	<!--움직이는 배경-->
+	<script type='text/javascript' src='js/jquery.particleground.js'></script>
+	<script src="js/covervid.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+   var text = document.getElementById("homeTitle");
+ //Home화면 텍스트 움직이는 함수 start
+            var typewriter = new Typewriter(text, {
+                loop: true
+            });
+ 
+            typewriter.typeString('Welcome!')
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString('This is my portfolio')
+                .pauseFor(2500)
+                .deleteChars(20)
+                .typeString('<strong>I hope you enjoy it:)</strong>')
+                .pauseFor(2500)
+                .start();
+
+    // HOME화면 텍스트 움직이는 함수END
+    
+    $(window).scroll(function(){
+				var time = 3;
+                $('.skillValue li').each(
+                    function(i){
+                        var size=$(this).data("size");
+						var color=$(this).data("color");
+
+                        var pos_obj = $(this).offset().top;
+                        var window_pos = $(window).scrollTop() + $(window).height();
+						
+						time=i;
+                        
+						if(window_pos >pos_obj){
+                            $(this).addClass("bar_new_ani");
+                            $(this).css("width",size+"%");
+							$(this).css("background-color",color);
+							$(this).css("transition-duration",time+"s");
+                        }
+                    }
+                );
+            });
+
+    /*$("#popOpen_1").on("click",function(){
+            $("#popup1").addClass("active");
+            });
+    $("#popOpen_2").on("click",function(){
+            $("#popup2").addClass("active");
+            });*/
+    $(".popOpen").on("click",function(){
+        var popObj = $(this).data("id");
+            $("#"+popObj).addClass("active");
+        
+            });
+    
+    $(".btn-close").on("click",function(){ 
+            $(".popup").removeClass("active"); 
+           
+    });
+
+	$('#particles').particleground({
+			dotColor: '#fff',
+			lineColor: '#fff'
+			 });
+	$('.intro').css({
+	
+	'margin-top': -($('.intro').height() / 2)
+  });
+
+
+ /* $('.covervid-video').coverVid(1920, 1080);*/
+});
+    
+    </script>
+</head>
+<body>
+  
+    <header>
+        <div class="logo">
+           <a href="#"><h2>YUYU's</h2></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#portfolio">PORTFOLIO</li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>    
+    </header>
+    <section id="home" class="fullpage">
+		<!--<div class="covervid-wrapper">
+			<video class="covervid-video" autoplay loop poster="image/coffee-5009730_1280.png">
+				<source src="image/graphic.webm" type="video/webm">
+				<source src="image/graphic.mp4" type="video/mp4">
+			</video>
+		</div>-->
+		<div id="particles">
+		  <div id="intro">
+			<h2 id="homeTitle" class="homeTitle">임유경입니다.</h2>
+		  </div>
+		</div>
+    </section>
+    <section id="about" class="fullpage">
+        <div class="profile">
+            <h2>기본정보</h2>
+            <div class="imgDiv">
+                <img src="image/img1.jpg" alt="">
+            </div>
+            <div class="infDiv">
+                <ul>
+                    <li class="nameTitle">임유경</li>
+                    <li>거주지 : 서울</li>
+                    <li>연락처 : 010-5177-0115</li>
+                    <li>이메일 : iyy@dongyang.ac.kr</li>
+                    <li>블로그 : http://jipsi@naver.com</li>
+                    
+                </ul>
+                <div>
+                    안녕하세요 저는 임유경입니다.
+                </div>
+            </div>
+        </div>
+        <div class="skill">
+            <h2>보유스킬</h2>
+            <ul class="skillName">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>C</li>
+                <li>JSP</li>
+                <li>영어</li>
+            </ul>
+            <ul class="skillValue">
+                <li data-size="100" data-color="pink" data-time="2s">HTML</li>
+                <li data-size="100"data-color="red">CSS</li>
+                <li data-size="50" data-color="orange">JavaScript</li>
+                <li data-size="80" data-color="yellow">Java</li>
+                <li data-size="20" data-color="green">C</li>
+                <li data-size="85" data-color="purple">JSP</li>
+                <li data-size="90" data-color="brown">영어</li>
+            </ul>
+        </div>
+    </section>
+    <section id="portfolio" class="fullpage">
+       
+       <h2>PORTFOLIO</h2>
+        <div class="project">
+            <div class="imgDiv">
+                <img src="image/coffee-5009730_1280.png" alt="">
+            </div>
+            <div class="content">
+                <h3 id="popOpen_1" data-id="popup1"class="popOpen">프로젝트 타이틀</h3>
+                <div>
+                    프로젝트 설명글
+                </div>
+                <div class="skill">
+                    <ul>
+                        <li>
+                            #HTML
+                        </li>
+                        <li>
+                            #CSS
+                        </li>
+                        <li>
+                            #JQUERY
+                        </li>
+                        <li>
+                            #AJAX
+                        </li>
+                        <li>
+                            #TEMPLATE
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <div class="imgDiv">
+                <img src="image/coffee-5009730_1280.png" alt="">
+            </div>
+            <div class="content">
+                <h3 id="popOpen_2" data-id="popup2" class="popOpen">프로젝트 타이틀</h3>
+                <div>
+                    프로젝트 설명글
+                </div>
+                <div class="skill">
+                    <ul>
+                        <li>
+                            #HTML
+                        </li>
+                        <li>
+                            #CSS
+                        </li>
+                        <li>
+                            #JQUERY
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section id="contact" class="fullpage">
+       <div style="display:inline-block; width:50%; float:left; height:100%;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d559.5547404173451!2d126.86745609020302!3d37.50037933122971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9de1fee16d79%3A0x1ab4872c13dbfeaf!2z64-Z7JaR66-4656Y64yA7ZWZ6rWQ!5e0!3m2!1sko!2skr!4v1623051014083!5m2!1sko!2skr" style="width:100%; height:100%;"  style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <form action="/serverPath" id="sendForm" method="post">
+        <div class="contactForm" style="display:inline-block; float:left; width:50%; height:100%;">
+           <h2>문의하기</h2>
+           
+            <div class="form">
+               <form action="mail.html">
+                <div><input type="text" id="txtName" name="clientName" placeholder="이름을 입력해주세요"></div>
+                <div><input type="text"id="txtTel" name="clientName" placeholder="연락처를 입력해주세요"></div>
+                <div><input type="text"id="txtMail" name="clientName"placeholder="asd@email.com">@<select><option>naver.com</option><option>hanmail.net</option><option value="">gmail.com</option></select></div>
+                   <div><textarea type="textarea"id="txtMemo" name="clientName" placeholder="내용을 입력해주세요."></textarea>
+                   </div>
+               </form>
+               
+            </div>
+            <div>
+               <form action="mail.html" >
+                   <input class="btnSend" type="submit" method="post" name="문의 메일 보내기" value="문의 메일 보내기">
+                </form>
+            </div>
+            
+        </div>
+        </form>
+        <div style="clear:both;"> </div>
+    </section>
+    <footer>
+        Copyright 2021. YuYu.All rights
+    </footer>
+
+<div id="popup1" class="popup">
+  <div class="popup-wrap text-popup">
+    <div class="popup-content" style="height:500px; overflow:scroll; overflow-x: hidden;">
+    <div class="title">팝업입니다.</div>
+    <div class="info-text">
+       포트폴리오 1번
+       <img src="image/coffee-5009730_1280.png" alt="" style="width:100%;">
+      <div style="width:100%; border:1px solid #ccc; height:450px;">
+          ddddddddddddddddddddddddddddddddddddddddddddd
+      </div>
+    </div>
+    <img src="image/btn_popup_close.png" alt="닫기 버튼" class="btn-close">
+    </div>
+  </div>
+</div>
+<div id="popup2" class="popup">
+  <div class="popup-wrap text-popup">
+    <div class="popup-content">
+    <div class="title">팝업입니다.</div>
+    <div class="info-text">
+       포트폴리오 2번
+    </div>
+    <img src="image/btn_popup_close.png" alt="닫기 버튼" class="btn-close">
+    </div>
+  </div>
+    </div>
+
+</body>
+</html>
